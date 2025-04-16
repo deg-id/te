@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Datos de contacto</title>
+</head>
+<body>
+    <div id="saludo"></div>
+
+    <script>
+    window.onload = function() {
+        const nombre = localStorage.getItem('nombre');
+        if (nombre) {
+        document.getElementById('saludo').textContent = `Bienvenido, ${nombre}`, nombre;
+    } else {
+        document.getElementById('saludo').textContent = 'Bienvenido, invitado';
+    }
+
+    }
+    </script>
+</body>
+</html>

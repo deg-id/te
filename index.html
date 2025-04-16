@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Blog Personal</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Blog Personal</h1>
+        <p>Un espacio donde comparto mis pensamientos e ideas.</p>
+    </header>
+    <main>
+        <article>
+            <h2>Mi Primer Entrada de Blog</h2>
+            <p>Este es el contenido de mi primera entrada. Aquí puedo escribir sobre mis hobbies, intereses, o cualquier tema que me apasione.</p>
+            <p>El desarrollo web es uno de mis intereses principales. Aprender HTML.</p>
+            <!-- Asegúrate de que la imagen esté en el mismo directorio que tu archivo HTML -->
+            <img src="imagen1.png" alt="Descripción de la imagen relacionada con la entrada del blog">
+        </article>
+        <section>
+            <h3>Comentarios</h3>
+            <!-- Los datos del formulario no se enviarán a ningún lado porque la acción está configurada para "#" -->
+            <form action="#" method="POST">
+                <label for="nombre">Nombre:</label> <br>
+                <input type="text" id="nombre1" name="nombre1" required> <br>
+                
+                <label for="correo">Correo electrónico:</label> <br>
+                <input type="email" id="correo" name="correo" required><br>
+                
+                <label for="comentario">Comentario:</label><br>
+                <textarea id="comentario" name="comentario" rows="4" required></textarea> <br>
+                
+                <button type="submit">Enviar Comentario</button>
+            </form>
+
+
+        </section>
+
+
+        <!-- Formulario en la página de origen (index.html) -->
+<form action="datos.html" method="POST" target="_blank"  onsubmit="enviarDatos()">
+    <br>
+    <input type="text" id="nombre" name="nombre" required> <br>
+    <input type="submit" value="Enviar">
+</form>
+
+
+    </main>
+    <footer>
+        <p>© 2024 Mi Blog Personal. Todos los derechos reservados.</p>
+    </footer>
+</body>
+<script>
+
+    function enviarDatos(){
+
+            const nombre = document.getElementById('nombre').value;
+            localStorage.setItem('nombre', nombre);
+    }
+</script>
+</html>
